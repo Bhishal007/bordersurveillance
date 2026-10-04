@@ -1,0 +1,26 @@
+[
+  {
+    "zone_id": "Z-RESTRICTED-1",
+    "name": "Restricted Border Zone",
+    "zone_type": "RESTRICTED_BORDER_ZONE",
+    "points": [[0.65, 0.15], [0.98, 0.15], [0.98, 0.95], [0.65, 0.95]],
+    "proximity_margin": 0.06,
+    "dwell_threshold_s": 4.0
+  },
+  {
+    "zone_id": "Z-APPROACH-1",
+    "name": "Outpost Approach",
+    "zone_type": "OUTPOST_APPROACH",
+    "points": [[0.35, 0.55], [0.65, 0.55], [0.65, 0.95], [0.35, 0.95]],
+    "proximity_margin": 0.05,
+    "dwell_threshold_s": 6.0
+  },
+  {
+    "zone_id": "Z-BUFFER-1",
+    "name": "Buffer Zone",
+    "zone_type": "BUFFER_ZONE",
+    "points": [[0.45, 0.15], [0.65, 0.15], [0.65, 0.55], [0.45, 0.55]],
+    "proximity_margin": 0.04,
+    "dwell_threshold_s": 8.0
+  }
+]

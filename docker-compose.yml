@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  blockchain:
+    build: ./blockchain
+    ports:
+      - "8545:8545"
+
+  backend:
+    build: ./border-surveillance-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/godseye
+      - BLOCKCHAIN_RPC_URL=http://blockchain:8545
+    depends_on:
+      - mongodb
+      - blockchain
+
+  frontend:
+    build: ./border-surveillance-ui
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:

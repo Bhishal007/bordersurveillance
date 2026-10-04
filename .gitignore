@@ -1,0 +1,29 @@
+# Virtual environments
+venv/
+*/venv/
+env/
+.env/
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+*/node_modules/
+
+# Ollama & compiled binaries / libraries
+lib/
+ollama/
+*.dll
+*.pyd
+*.so
+*.dylib
+*.exe
+
+# Large AI model weights & cache files
+models/
+*.bin
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx

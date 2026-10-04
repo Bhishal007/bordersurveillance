@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_24-650ff86d7beedb03a3c55feb4e7142aa5563b08d",
+  "solcVersion": "0.8.24",
+  "solcLongVersion": "0.8.24+commit.e11b9ed9",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.15.0"
+  },
+  "userSourceNameMap": {
+    "contracts/IncidentAudit.sol": "project/contracts/IncidentAudit.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "shanghai",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/IncidentAudit.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract IncidentAudit {\r\n    struct Incident {\r\n        string alertId;\r\n        bytes32 dataHash;\r\n        uint256 timestamp;\r\n        string threatLevel;\r\n        address recordedBy;\r\n    }\r\n\r\n    mapping(string => Incident) public incidents;\r\n    event IncidentLogged(string indexed alertId, bytes32 dataHash, uint256 timestamp);\r\n\r\n    function logIncident(string memory _alertId, bytes32 _dataHash, string memory _threatLevel) public {\r\n        incidents[_alertId] = Incident(_alertId, _dataHash, block.timestamp, _threatLevel, msg.sender);\r\n        emit IncidentLogged(_alertId, _dataHash, block.timestamp);\r\n    }\r\n}"
+      }
+    }
+  }
+}

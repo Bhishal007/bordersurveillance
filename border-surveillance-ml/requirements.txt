@@ -1,0 +1,12 @@
+opencv-python
+numpy
+mediapipe==0.10.13
+ultralytics
+fastapi
+uvicorn[standard]
+sqlalchemy
+websockets
+requests
+httpx
+pytesseract          # ANPR OCR -- also needs the tesseract-ocr system package installed
+lap                  # required by Ultralytics' bundled ByteTrack tracker (model.track())

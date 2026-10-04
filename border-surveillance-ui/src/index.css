@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* Exact God's Eye Color Palette */
+  --color-ge-bg: #000000;
+  --color-ge-panel: #050a0f;
+  --color-ge-cyan: #38bdf8;         /* The main UI border/text color */
+  --color-ge-cyan-dim: rgba(56, 189, 248, 0.2);
+  --color-ge-text: #7dd3fc;         /* Slightly lighter for readable text */
+  --color-ge-green: #4ade80;        /* For active toggles/status */
+  --color-ge-darkbtn: #0f172a;
+
+  /* Monospace font is critical for this look */
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
